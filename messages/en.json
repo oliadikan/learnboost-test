@@ -1,7 +1,8 @@
 {
   "Home": {
-    "starter": "Next.js Supabase Starter",
-    "steps": "Next steps", 
     "powered": "Powered by"
+  },
+  "Hero": {
+    "title": "Welcome to"
   }
 }

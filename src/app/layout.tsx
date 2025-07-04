@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
 import { ThemeProvider } from "next-themes";
-import {NextIntlClientProvider} from 'next-intl';
-import {getLocale} from 'next-intl/server';
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale } from "next-intl/server";
 import "./globals.css";
 
 const defaultUrl = process.env.VERCEL_URL
@@ -15,23 +14,16 @@ export const metadata: Metadata = {
   description: "The fastest way to build apps with Next.js and Supabase",
 };
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  display: "swap",
-  subsets: ["latin"],
-});
-
 export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-
   const locale = await getLocale();
 
   return (
     <html lang={locale} suppressHydrationWarning>
-      <body className={`${geistSans.className} antialiased`}>
+      <body>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
