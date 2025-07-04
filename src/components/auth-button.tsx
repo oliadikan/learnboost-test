@@ -2,6 +2,14 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { createClient } from "@/src/lib/supabase/server";
 import { LogoutButton } from "./logout-button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 export async function AuthButton() {
   const supabase = await createClient();
@@ -12,8 +20,15 @@ export async function AuthButton() {
 
   return user ? (
     <div className="flex items-center gap-4">
-      Hey, {user.email}!
-      <LogoutButton />
+      <DropdownMenu>
+      <DropdownMenuTrigger asChild><Button variant={'outline'}><div><div className="h-1 w-9 my-1 bg-primary"></div><div className="h-1 w-9 my-1 bg-primary"></div><div className="h-1 w-9 my-1 bg-primary"></div></div></Button></DropdownMenuTrigger>
+      <DropdownMenuContent>
+      <DropdownMenuLabel>Hey, {user.email}!</DropdownMenuLabel>
+      <DropdownMenuSeparator />
+      <DropdownMenuItem>Edit profile</DropdownMenuItem>
+      <DropdownMenuItem><LogoutButton /></DropdownMenuItem>
+      </DropdownMenuContent>
+      </DropdownMenu>
     </div>
   ) : (
     <div className="flex gap-2">
