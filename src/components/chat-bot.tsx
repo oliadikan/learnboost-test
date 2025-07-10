@@ -11,13 +11,12 @@ import { Button } from "@/components/ui/button"
 import { SendHorizontal } from "lucide-react";
 import {answers} from "../../public/data/random_chatbot_responses.json"
 import { useState } from 'react';
+import { useTranslations } from "next-intl";
 
 
 
 export default function ChatBot(){
-
-
-
+    const t = useTranslations("ChatBot");
     const [history, setHistory] = useState<{question:string; thinking_response:string; final_response:string;}[]>([]);
     const [input, setInput] = useState("");
     const [randomAnswer, setAnswer] = useState(Math.floor(Math.random() * answers.length));
@@ -123,7 +122,7 @@ export default function ChatBot(){
         </ChatMessageList>
 
          <div className="flex-1 flex h-[10vh] justify-evenly items-center absolute bottom-0 right-0 left-0">
-            <ChatInput placeholder="Ask a question" className="w-3/4" onChange={e => setInput(e.target.value)} value={input}/>
+            <ChatInput placeholder={t("placeholder")} className="w-3/4" onChange={e => setInput(e.target.value)} value={input}/>
             <Button onClick={submit} size="sm"><SendHorizontal className="size-1.5" /></Button>
         </div>
 

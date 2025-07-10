@@ -10,8 +10,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { useTranslations } from "next-intl";
 
 export async function AuthButton() {
+  const t = useTranslations("AuthButton");
   const supabase = await createClient();
 
   const {
@@ -25,7 +27,7 @@ export async function AuthButton() {
       <DropdownMenuContent>
       <DropdownMenuLabel>Hey, {user.email}!</DropdownMenuLabel>
       <DropdownMenuSeparator />
-      <DropdownMenuItem>Edit profile</DropdownMenuItem>
+      <DropdownMenuItem>{t("edit")}</DropdownMenuItem>
       <DropdownMenuItem><LogoutButton /></DropdownMenuItem>
       </DropdownMenuContent>
       </DropdownMenu>
@@ -33,7 +35,7 @@ export async function AuthButton() {
   ) : (
     <div className="flex gap-2">
       <Button asChild size="sm" variant={"default"}>
-        <Link href="/auth/login">Login</Link>
+        <Link href="/auth/login">{t("login")}</Link>
       </Button>
     </div>
   );

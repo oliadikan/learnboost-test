@@ -4,5 +4,84 @@
   },
   "Hero": {
     "title": "Welcome to"
+  },
+  "Error": {
+    "sorry": "Sorry, something went wrong.",
+    "code": "Code error:",
+    "unspecified": "An unspecified error occurred."
+  },
+  "Success": {
+    "thank": "Thank you for signing up!",
+    "check": "Check your email to confirm",
+    "successfully": "You've successfully signed up. Please check your email to confirm your account before signing in."
+  },
+  "AuthButton": {
+    "edit": "Edit profile",
+    "login": "Login"
+  },
+  "ChatBot": {
+    "placeholder": "Ask a question"
+  },
+  "EnvVarWarning": {
+    "required": "Supabase environment variables required",
+    "signin": "Sign in"
+  },
+  "Forgot": {
+    "occured": "An error occurred",
+    "check": "Check Your Email",
+    "instructions": "Password reset instructions sent",
+    "willreceive": "If you registered using your email and password, you will receive a password reset email.",
+    "reset": "Reset Your Password",
+    "typein": "Type in your email and we'll send you a link to reset your password",
+    "sending": "Sending...",
+    "sent": "Send reset email",
+    "already": "Already have an account?",
+    "login": "Login",
+    "email": "Email"
+  },
+  "Login": {
+    "error": "An error occurred",
+    "login": "Login",
+    "enter": "Enter your email below to login to your account",
+    "email": "Email",
+    "password": "Password",
+    "forgot": "Forgot your password?",
+    "logging": "Logging in...",
+    "noaccount": "Don't have an account?",
+    "signup": "Sign up"
+  },
+  "Logout": {
+    "logout": "Logout"
+  },
+  "Navbar": {
+    "tutor": "Tutor AI",
+    "summary": "Summary",
+    "cards": "Cards"
+  },
+  "SignUp": {
+    "notmatch": "Passwords do not match",
+    "error": "An error occurred",
+    "signup": "Sign up",
+    "create": "Create a new account",
+    "email": "Email",
+    "password": "Password",
+    "repeat": "Repeat Password",
+    "creating": "Creating an account...",
+    "already": "Already have an account?",
+    "login": "Login"
+  },
+  "Update": {
+    "error": "An error occurred",
+    "reset": "Reset Your Password",
+    "enter": "Please enter your new password below.",
+    "new": "New password",
+    "saving": "Saving...",
+    "saved": "Save new password",
+    "placeholder": "New password"
+  },
+  "Theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
   }
 }

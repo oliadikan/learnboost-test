@@ -5,8 +5,10 @@ import { hasEnvVars } from "@/src/lib/utils";
 import { AuthButton } from "@/components/auth-button";
 import { createClient } from "@/src/lib/supabase/server";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
+import { useTranslations } from "next-intl";
 
 export async function Navbar(){
+    const t = useTranslations("Navbar");
     const supabase = await createClient();
 
     const {
@@ -22,9 +24,9 @@ export async function Navbar(){
             </div>
             <div>
                 {user? <ToggleGroup variant="outline" type="single" size="lg">
-                <ToggleGroupItem value="tutor">Tutor AI</ToggleGroupItem>
-                <ToggleGroupItem value="summary">Summary</ToggleGroupItem>
-                <ToggleGroupItem value="cards">Cards</ToggleGroupItem>
+                <ToggleGroupItem value="tutor">{t("tutor")}</ToggleGroupItem>
+                <ToggleGroupItem value="summary">{t("summary")}</ToggleGroupItem>
+                <ToggleGroupItem value="cards">{t("cards")}</ToggleGroupItem>
             </ToggleGroup> : <div></div>}</div>
             {!hasEnvVars ? <EnvVarWarning /> : <AuthButton />}
           </div>
