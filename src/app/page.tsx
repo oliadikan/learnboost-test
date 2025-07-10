@@ -8,10 +8,9 @@ export default function Home() {
       <div className="flex-1 w-full flex flex-col items-center">
         <Navbar />
         <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
-        <div className="flex-1 flex flex-col gap-20 max-w-5xl p-5">
+        <div className="flex-1 flex flex-col max-w-5xl p-5 justify-center">
           <Hero />
         </div>
-
         <Footer />
       </div>
     </main>

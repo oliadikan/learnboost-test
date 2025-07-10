@@ -14,7 +14,7 @@ export default async function ProtectedPage() {
  
 
   return (
-    <div className="flex-1 flex w-full p-5">
+    <div className="flex-1 flex w-full h-screen p-5">
       <div className="w-1/2">
           <embed src="/data/nachhaltigkeit.pdf" type="application/pdf" height="100%" width="100%"/>
       </div>
