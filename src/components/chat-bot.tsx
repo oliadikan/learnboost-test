@@ -11,20 +11,27 @@ import { Button } from "@/components/ui/button"
 import { SendHorizontal } from "lucide-react";
 import {answers} from "../../public/data/random_chatbot_responses.json"
 import { useState } from 'react';
+import { createClient } from "@/src/lib/supabase/client";
 import { useTranslations } from "next-intl";
 
 
 
 export default function ChatBot(){
     const t = useTranslations("ChatBot");
+    const supabase = createClient();
+
     const [history, setHistory] = useState<{question:string; thinking_response:string; final_response:string;}[]>([]);
     const [input, setInput] = useState("");
     const [randomAnswer, setAnswer] = useState(Math.floor(Math.random() * answers.length));
     const [randomWait, setWait] = useState(2000 + Math.floor(Math.random() * 3000));
     const [changed, setChanged] = useState(false);
 
-    function submit() {
+    async function submit() {
         setAnswer(Math.floor(Math.random() * answers.length));
+        const { count, anotherError } = await supabase.from('chatbot').select('*', { count: 'exact', head: true});
+        const {data, error } = await supabase.from('chatbot').insert({ id: (count? count+1: 1), question: input, answer:answers[randomAnswer] });
+        console.log(data);
+        console.log(error);
         let line = {
             question: input,
             thinking_response: answers[randomAnswer].thinking_response,

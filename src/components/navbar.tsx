@@ -5,10 +5,10 @@ import { hasEnvVars } from "@/src/lib/utils";
 import { AuthButton } from "@/components/auth-button";
 import { createClient } from "@/src/lib/supabase/server";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
-import { useTranslations } from "next-intl";
+import {getTranslations} from 'next-intl/server';
 
 export async function Navbar(){
-    const t = useTranslations("Navbar");
+    const t = await getTranslations("Navbar");
     const supabase = await createClient();
 
     const {

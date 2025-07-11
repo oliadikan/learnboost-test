@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { useTranslations } from "next-intl";
+import {getTranslations} from 'next-intl/server';
 
 export default async function Page({
   searchParams,
@@ -7,7 +7,7 @@ export default async function Page({
   searchParams: Promise<{ error: string }>;
 }) {
   const params = await searchParams;
-  const t = useTranslations("Error");
+  const t = await getTranslations("Error");
 
   return (
     <div className="flex min-h-svh w-full items-center justify-center p-6 md:p-10">

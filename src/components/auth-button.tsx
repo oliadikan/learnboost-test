@@ -10,10 +10,10 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { useTranslations } from "next-intl";
+import {getTranslations} from 'next-intl/server';
 
 export async function AuthButton() {
-  const t = useTranslations("AuthButton");
+  const t = await getTranslations("AuthButton");
   const supabase = await createClient();
 
   const {
