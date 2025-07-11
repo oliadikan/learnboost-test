@@ -30,8 +30,6 @@ export default function ChatBot(){
         setAnswer(Math.floor(Math.random() * answers.length));
         const { count, anotherError } = await supabase.from('chatbot').select('*', { count: 'exact', head: true});
         const {data, error } = await supabase.from('chatbot').insert({ id: (count? count+1: 1), question: input, answer:answers[randomAnswer] });
-        console.log(data);
-        console.log(error);
         let line = {
             question: input,
             thinking_response: answers[randomAnswer].thinking_response,
@@ -48,7 +46,7 @@ export default function ChatBot(){
     console.log(history);
     return(
     <div>
-        <ChatMessageList>
+        <ChatMessageList className="h-[75vh]">
             {
                 history.map((item, i) => { 
                     let uniqueId = "loading" + `${i}`;
@@ -128,7 +126,7 @@ export default function ChatBot(){
 
         </ChatMessageList>
 
-         <div className="flex-1 flex h-[10vh] justify-evenly items-center absolute bottom-0 right-0 left-0">
+         <div className="flex-1 flex h-[5vh] justify-evenly items-center absolute bottom-0 right-0 left-0">
             <ChatInput placeholder={t("placeholder")} className="w-3/4" onChange={e => setInput(e.target.value)} value={input}/>
             <Button onClick={submit} size="sm"><SendHorizontal className="size-1.5" /></Button>
         </div>

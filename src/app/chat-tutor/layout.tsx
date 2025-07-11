@@ -10,7 +10,7 @@ export default function ProtectedLayout({
     <main className="min-h-screen flex flex-col items-center">
       <div className="flex-1 w-full flex flex-col items-center">
         <Navbar />
-        <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent" />
+        <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-blue-500 dark:via-blue-300 to-transparent" />
 
         {children}
 

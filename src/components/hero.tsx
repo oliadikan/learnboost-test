@@ -9,7 +9,7 @@ export function Hero() {
       <h1 className="text-3xl lg:text-4xl !leading-tight mx-auto max-w-xl text-center">
         {t("title")} <Learnboost />
       </h1>
-      <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent my-8" />
+      <div className="w-full p-[1px] bg-gradient-to-r from-transparent via-blue-500 dark:via-blue-300 to-transparent my-8" />
     </div>
   );
 }
